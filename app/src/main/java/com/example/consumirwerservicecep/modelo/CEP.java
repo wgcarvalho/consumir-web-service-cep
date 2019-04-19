@@ -6,8 +6,28 @@ public class CEP {
     private String logradouro;
     private String complemento;
     private String bairro;
-    private String cidade;
-    private String estado;
+    private String localidade;
+    private String uf;
+    private String ibge;
+
+    /*
+    * {
+      "cep": "01001-000",
+      "logradouro": "Praça da Sé",
+      "complemento": "lado ímpar",
+      "bairro": "Sé",
+      "localidade": "São Paulo",
+      "uf": "SP",
+      "unidade": "",
+      "ibge": "3550308",
+      "gia": "1004"
+    }
+    *
+    *
+    *
+    *
+    *
+    * */
 
     public String getCep() {
         return cep;
@@ -41,29 +61,38 @@ public class CEP {
         this.bairro = bairro;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getLocalidade() {
+        return localidade;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setLocalidade(String localidade) {
+        this.localidade = localidade;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getUf() {
+        return uf;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+
+    public String getIbge() {
+        return ibge;
+    }
+
+    public void setIbge(String ibge) {
+        this.ibge = ibge;
     }
 
     @Override
     public String toString() {
-        return "CEP: " + getCep()
-                + "\nLogradouro: " + getLogradouro()
-                + "\nComplemento: " + getComplemento()
-                + "\nBairro: " + getBairro()
-                + "\nCidade:" + getCidade()
-                + "\nEstado: " + getEstado();
+        return  "cep= '" + cep + '\'' +
+                ", \nlogradouro= '" + logradouro + '\'' +
+                ", \ncomplemento= '" + complemento + '\'' +
+                ", \nbairro= '" + bairro + '\'' +
+                ", \nlocalidade= '" + localidade + '\'' +
+                ", \nuf= '" + uf + '\'' +
+                ", \nibge= '" + ibge;
     }
 }
