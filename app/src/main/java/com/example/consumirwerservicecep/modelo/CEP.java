@@ -8,26 +8,7 @@ public class CEP {
     private String bairro;
     private String localidade;
     private String uf;
-    private String ibge;
 
-    /*
-    * {
-      "cep": "01001-000",
-      "logradouro": "Praça da Sé",
-      "complemento": "lado ímpar",
-      "bairro": "Sé",
-      "localidade": "São Paulo",
-      "uf": "SP",
-      "unidade": "",
-      "ibge": "3550308",
-      "gia": "1004"
-    }
-    *
-    *
-    *
-    *
-    *
-    * */
 
     public String getCep() {
         return cep;
@@ -77,22 +58,14 @@ public class CEP {
         this.uf = uf;
     }
 
-    public String getIbge() {
-        return ibge;
-    }
-
-    public void setIbge(String ibge) {
-        this.ibge = ibge;
-    }
 
     @Override
     public String toString() {
-        return  "cep= '" + cep + '\'' +
-                ", \nlogradouro= '" + logradouro + '\'' +
-                ", \ncomplemento= '" + complemento + '\'' +
-                ", \nbairro= '" + bairro + '\'' +
-                ", \nlocalidade= '" + localidade + '\'' +
-                ", \nuf= '" + uf + '\'' +
-                ", \nibge= '" + ibge;
+        return  "CEP: " + cep +
+                ", \nLogradouro: " + logradouro +
+                ", \nComplemento: " + complemento +
+                ", \nBairro: " + bairro +
+                ", \nLocalidade: " + localidade +
+                ", \nUF: '" + uf;
     }
 }
