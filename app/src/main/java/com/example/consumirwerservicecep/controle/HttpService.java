@@ -11,19 +11,19 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class HttpService extends AsyncTask<Void, Void, CEP> {
+public class HttpService extends AsyncTask<Void, Void, String> {
 
-    private String cep;
+  //  private String cep;
 
     @Override
-    protected CEP doInBackground(Void... voids) {
+    protected String doInBackground(Void... voids) {
         // realizar requisição e consumir o serviço
 
         StringBuilder resposta = new StringBuilder();
 
-        if (this.cep != null && this.cep.length() == 8) {
+       // if (this.cep != null && this.cep.length() == 8) {
             try {
-                URL url = new URL("http://viacep.com.br/ws/" + this.cep + "/json/");
+                URL url = new URL("https://agendamotoristas-7c4a5.firebaseio.com/motorista/05e5322e-dc0c-452d-9e8b-2abb02f1c319/nome.json");
 
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
@@ -42,12 +42,12 @@ public class HttpService extends AsyncTask<Void, Void, CEP> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+       // }
 
-        return new Gson().fromJson(resposta.toString(), CEP.class);
+        return new Gson().fromJson(resposta.toString(), String.class);
     }
 
-    public HttpService(String cepEnviado) {
-        cep = cepEnviado;
+    public HttpService() {
+        
     }
 }
