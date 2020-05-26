@@ -23,7 +23,7 @@ public class HttpService extends AsyncTask<Void, Void, String> {
 
        // if (this.cep != null && this.cep.length() == 8) {
             try {
-                URL url = new URL("https://agendamotoristas-7c4a5.firebaseio.com/motorista/05e5322e-dc0c-452d-9e8b-2abb02f1c319/nome.json");
+                URL url = new URL("http://ws.matheuscastiglioni.com.br/ws/cep/find/" + this.cep + "/json/");
 
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
