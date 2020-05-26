@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class HttpService extends AsyncTask<Void, Void, String> {
 
-  //  private String cep;
+   private String cep;
 
     @Override
     protected String doInBackground(Void... voids) {
@@ -21,7 +21,7 @@ public class HttpService extends AsyncTask<Void, Void, String> {
 
         StringBuilder resposta = new StringBuilder();
 
-       // if (this.cep != null && this.cep.length() == 8) {
+        if (this.cep != null && this.cep.length() == 8) {
             try {
                 URL url = new URL("http://ws.matheuscastiglioni.com.br/ws/cep/find/" + this.cep + "/json/");
 
@@ -42,12 +42,12 @@ public class HttpService extends AsyncTask<Void, Void, String> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-       // }
+        }
 
         return new Gson().fromJson(resposta.toString(), String.class);
     }
 
-    public HttpService() {
-        
+    public HttpService(String cep) {
+        this.cep = cep;
     }
 }
