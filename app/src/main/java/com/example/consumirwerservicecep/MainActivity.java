@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 //buscar CEP
 
                 try {
-                    String retorno = new HttpService().execute().get();
+                    String retorno = new HttpService(edtCEP.getText().toString()).execute().get();
                     tviewResposta.setText(retorno.toString());
                 } catch (InterruptedException e) {
                     e.printStackTrace();
